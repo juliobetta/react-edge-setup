@@ -1,0 +1,32 @@
+{
+  "testPathIgnorePatterns": [
+    "/utils/",
+    "/setup/",
+    "/__e2e__/",
+    "/node_modules/"
+  ],
+  "rootDir": "../../src",
+  "coverageDirectory": "../coverage",
+  "verbose": true,
+  "collectCoverage": true,
+  "setupTestFrameworkScriptFile": "../config/jest/setup.js",
+  "snapshotSerializers": [
+    "enzyme-to-json/serializer"
+  ],
+  "transform": {
+    "^.+\\.jsx?$": "babel-jest",
+    "^.+\\.css$": "../config/jest/cssTransform.js",
+    "^(?!.*\\.(js|jsx|mjs|css|json)$)": "../config/jest/fileTransform.js"
+  },
+  "moduleNameMapper": {
+    "^.+\\.(css|scss|less)$": "identity-obj-proxy"
+  },
+  "coveragePathIgnorePatterns": [
+    "/exceptions/",
+    "constants*",
+    "/langs/",
+    "/src\/__tests__\/setup/",
+    "style.js",
+    "/assets/"
+  ]
+}

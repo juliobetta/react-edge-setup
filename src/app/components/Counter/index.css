@@ -1,0 +1,15 @@
+:root {
+  --background: #ededeb;
+}
+
+.Counter {
+  background-color: var(--background);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  > span {
+    font-size: 4rem;
+  }
+}

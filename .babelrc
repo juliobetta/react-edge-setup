@@ -1,0 +1,43 @@
+{
+  "presets": [
+    ["@babel/preset-env", {
+      "targets": {
+        "node": "8.10.0"
+      },
+      "modules": false
+    }],
+    ["@babel/preset-stage-0", { "decoratorsLegacy": true }],
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    "lodash",
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "helpers": false,
+        "polyfill": false,
+        "regenerator": true
+      }
+    ]
+  ],
+  "env": {
+    "production": {
+      "plugins": [
+        "babel-plugin-transform-react-constant-elements"
+      ]
+    },
+    "test": {
+      "presets": [
+        ["@babel/preset-env"],
+        ["@babel/preset-stage-0", { "decoratorsLegacy": true }],
+        "@babel/preset-react"
+      ],
+      "plugins": [
+        [
+          "istanbul",
+          { "exclude": [ "src/**/*.test.js", "__tests__" ] }
+        ]
+      ]
+    }
+  }
+}
